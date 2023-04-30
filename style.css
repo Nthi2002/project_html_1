@@ -1,0 +1,174 @@
+.frame {
+    top: 50%;
+    left: 50%;
+    color: #333;
+    width: 400px;
+    height: 400px;
+      overflow: hidden;
+    position: absolute;
+    margin-top: -200px;
+    border-radius: 2px;
+    margin-left: -200px;
+    background: #272c34;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+      font-family: 'Open Sans', Helvetica, sans-serif;
+  }
+  
+  .center {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .sky{
+      opacity: 0;
+      width: 200px;
+      height: 200px;
+      clip-path: circle(50%);
+      animation: day 5s infinite 2s;
+      background-color: rgb(125, 223, 252);
+  }
+  
+  .orbit{
+      top: 130px;
+      left: 5px;
+      width: 200px;
+      height: 50px;
+      position: absolute;
+      animation: day-cicle 5s ease 2s infinite;
+  }
+  
+  .sun{
+      z-index: 2;
+      left: -50px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: rgb(255, 239, 0);
+  }
+  
+  .pyramid-left{
+      top: 74px;
+      left: 40px;
+      height: 57px;
+      width: 116px;
+      position: absolute;
+      background: rgb(243, 243, 243);
+      animation: pyramid-color 5s infinite 2s;
+      clip-path: polygon(0% 100%, 70% 100%, 50% 0%);
+  }
+  
+  .pyramid-right{
+      top: 74px;
+      left: 40px;
+      z-index: -1;
+      height: 57px;
+      width: 116px;
+      position: absolute;
+      background: rgb(221, 218, 218);
+      clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+      animation: pyramid-color 5s infinite 2s reverse;
+  }
+  
+  .shadow {
+      z-index: 2;
+      top: 130px;
+      left: -80px;
+      height: 30px;
+      width: 360px;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.2);
+      transform-origin: 50% 0%;
+      clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+      animation: shadow 5s infinite 2s;
+  }
+  
+  .sand{
+      bottom: 0;
+      width: 200px;
+      height: 70px;
+      position: absolute;
+      background-color: rgb(240, 222, 117);
+  }
+  
+  @keyframes day{
+      0%{
+          opacity: 0;
+      }
+      30%{
+          opacity: 1;
+      }
+      70%{
+          opacity: 1;
+      }
+      100%{
+          opacity: 0;
+      }
+  }
+  
+  @keyframes day-cicle{
+      0%{
+          transform: rotate(0deg);
+      }
+      30%{
+          transform: rotate(60deg);
+      }
+      45%{
+          transform: rotate(60deg);
+      }
+      100%{
+          transform: rotate(160deg);
+      }
+  }
+  
+  @keyframes pyramid-color{
+      0%{
+          background: rgb(243, 243, 243);
+      }
+      40%{
+          background: rgb(243, 243, 243);
+      }
+      45%{
+          background: rgb(243, 243, 243);
+      }
+      70%{
+          background: rgb(221, 218, 218);
+      }
+      100%{
+          background: rgb(221, 218, 218);
+      }
+  }
+  
+  @keyframes shadow{
+      0% {
+          transform: scaleY(0);
+          clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+      }
+  
+      30% {
+          transform: scaleY(1);
+          clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+      }
+      
+          45% {
+          transform: scaleY(1);
+          clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+      }
+  
+      57% {
+          transform: scaleY(.4);
+      }
+  
+      75% {
+          transform: scaleY(1);
+      }
+  
+      100% {
+          transform: scaleY(0);
+          clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+      }
+  }
